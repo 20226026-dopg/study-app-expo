@@ -37,7 +37,15 @@
           }
         }
       ],
-      "expo-web-browser"
+      "expo-web-browser",
+      [
+        "@sentry/react-native/expo",
+        {
+          "url": "https://sentry.io/",
+          "project": "study-app",
+          "organization": "phan-gia-do"
+        }
+      ]
     ],
     "experiments": {
       "typedRoutes": true,
