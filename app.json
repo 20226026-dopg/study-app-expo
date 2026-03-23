@@ -45,7 +45,8 @@
           "project": "study-app",
           "organization": "phan-gia-do"
         }
-      ]
+      ],
+      "expo-sharing"
     ],
     "experiments": {
       "typedRoutes": true,
