@@ -1,5 +1,5 @@
 import { COLORS } from "@/lib/theme";
-import { useUser } from "@clerk/clerk-expo";
+import { useUser } from "@clerk/expo";
 import type { Call } from "@stream-io/video-react-native-sdk";
 import { useEffect, useState } from "react";
 import { ActivityIndicator, StyleSheet, View } from "react-native";
@@ -15,7 +15,6 @@ let RingingCallContent: any = null;
 // i.e. in Expo Go this is not available - so instead of crashing, we just don't show the video features.
 try {
   const sdk = require("@stream-io/video-react-native-sdk");
-  StreamVideo = sdk.StreamVideo;
   StreamVideo = sdk.StreamVideo;
   StreamVideoClient = sdk.StreamVideoClient;
   useCalls = sdk.useCalls;

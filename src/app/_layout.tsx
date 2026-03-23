@@ -1,16 +1,14 @@
+import ChatWrapper from "@/components/ChatWrapper";
+import { AppProvider } from "@/contexts/AppProvider";
+import { COLORS } from "@/lib/theme";
 import { ClerkProvider } from "@clerk/expo";
 import { tokenCache } from "@clerk/expo/token-cache";
 import * as Sentry from "@sentry/react-native";
 import { Stack } from "expo-router";
-import { StatusBar } from "expo-status-bar";
 import * as SystemUI from "expo-system-ui";
 import { useEffect } from "react";
-import { SafeAreaProvider } from "react-native-safe-area-context";
-import "../../global.css";
-import { COLORS } from "@/lib/theme";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
-import { AppProvider } from "@/contexts/AppProvider";
-import ChatWrapper from "@/components/ChatWrapper";
+import "../../global.css";
 
 Sentry.init({
   dsn: "https://8e7672c01114c34e7486a9095971b65b@o4511052830408704.ingest.de.sentry.io/4511078092898384",
