@@ -84,7 +84,7 @@ const ChannelScreen = () => {
   if (!channel) return <FullScreenLoader message="Loading study room..." />;
 
   return (
-    <View className="flex-1 bg-border">
+    <View className="flex-1 bg-border py-12">
       <Channel
         channel={channel}
         keyboardVerticalOffset={headerHeight}
