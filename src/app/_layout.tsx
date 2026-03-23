@@ -9,7 +9,8 @@ import { SafeAreaProvider } from "react-native-safe-area-context";
 import "../../global.css";
 import { COLORS } from "@/lib/theme";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
-
+import { AppProvider } from "@/contexts/AppProvider";
+import ChatWrapper from "@/components/ChatWrapper";
 
 Sentry.init({
   dsn: "https://8e7672c01114c34e7486a9095971b65b@o4511052830408704.ingest.de.sentry.io/4511078092898384",
@@ -40,17 +41,19 @@ export default function RootLayout() {
   useEffect(() => {
     SystemUI.setBackgroundColorAsync(COLORS.background);
   }, []);
-  
+
   return (
-    <SafeAreaProvider>
-      <GestureHandlerRootView className="flex-1">}>
-      <ClerkProvider publishableKey={publishableKey} tokenCache={tokenCache}>
-        <Stack screenOptions={{ headerShown: false }}>
-          <Stack.Screen name="(tabs)" />
-          <Stack.Screen name="(auth)" />
-        </Stack>
-      </ClerkProvider>
+    <ClerkProvider publishableKey={publishableKey} tokenCache={tokenCache}>
+      <GestureHandlerRootView className="flex-1">
+        <ChatWrapper>
+          <AppProvider>
+            <Stack screenOptions={{ headerShown: false }}>
+              <Stack.Screen name="(tabs)" />
+              <Stack.Screen name="(auth)" />
+            </Stack>
+          </AppProvider>
+        </ChatWrapper>
       </GestureHandlerRootView>
-    </SafeAreaProvider>
+    </ClerkProvider>
   );
 }
