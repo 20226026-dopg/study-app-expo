@@ -8,6 +8,8 @@ import { useEffect } from "react";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import "../../global.css";
 import { COLORS } from "@/lib/theme";
+import { GestureHandlerRootView } from "react-native-gesture-handler";
+
 
 Sentry.init({
   dsn: "https://8e7672c01114c34e7486a9095971b65b@o4511052830408704.ingest.de.sentry.io/4511078092898384",
@@ -38,16 +40,17 @@ export default function RootLayout() {
   useEffect(() => {
     SystemUI.setBackgroundColorAsync(COLORS.background);
   }, []);
-
+  
   return (
     <SafeAreaProvider>
+      <GestureHandlerRootView className="flex-1">}>
       <ClerkProvider publishableKey={publishableKey} tokenCache={tokenCache}>
-        <StatusBar style="light" backgroundColor={COLORS.background} />
         <Stack screenOptions={{ headerShown: false }}>
           <Stack.Screen name="(tabs)" />
           <Stack.Screen name="(auth)" />
         </Stack>
       </ClerkProvider>
+      </GestureHandlerRootView>
     </SafeAreaProvider>
   );
 }

@@ -25,7 +25,7 @@ const ProfileScreen = () => {
       </View>
 
       {/* PROFILE CARD */}
-      <View className="items-center py-5">
+      <View className="items-center py-2">
         <View className="mb-3.5 relative">
           <Image
             source={user?.imageUrl}
@@ -44,7 +44,7 @@ const ProfileScreen = () => {
           {user?.primaryEmailAddress?.emailAddress}
         </Text>
 
-        <View className="mt-3 flex-row items-center gap-1.5 rounded-full bg-[#FDCB6E1E] px-3.5 py-1.5">
+        <View className="mt-3 flex-row items-center gap-1.5 rounded-full bg-[#FDCB6E1E] px-3.5 py-1">
           <Ionicons name="flame" size={16} color="#FDCB6E" />
           <Text className="text-sm font-semibold text-[#FDCB6E]">7 day study streak</Text>
         </View>
@@ -52,15 +52,15 @@ const ProfileScreen = () => {
 
       {/* Stats */}
       <View className="mt-2 mb-6 flex-row gap-3 px-5">
-        <View className="flex-1 items-center rounded-2xl border border-border bg-surface px-4 py-4">
+        <View className="flex-1 items-center rounded-2xl border border-border bg-surface px-4 py-3">
           <Text className="text-2xl font-bold text-primary">24</Text>
           <Text className="mt-1 text-xs text-foreground-muted">Sessions</Text>
         </View>
-        <View className="flex-1 items-center rounded-2xl border border-border bg-surface px-4 py-4">
+        <View className="flex-1 items-center rounded-2xl border border-border bg-surface px-4 py-3">
           <Text className="text-2xl font-bold text-primary">12</Text>
           <Text className="mt-1 text-xs text-foreground-muted">Partners</Text>
         </View>
-        <View className="flex-1 items-center rounded-2xl border border-border bg-surface px-4 py-4">
+        <View className="flex-1 items-center rounded-2xl border border-border bg-surface px-4 py-3">
           <Text className="text-2xl font-bold text-primary">48h</Text>
           <Text className="mt-1 text-xs text-foreground-muted">Study Time</Text>
         </View>
@@ -71,7 +71,7 @@ const ProfileScreen = () => {
         {MENU_ITEMS.map((item, i) => (
           <Pressable
             key={i}
-            className="mb-1.5 flex-row items-center gap-3.5 rounded-xl border border-border bg-surface px-4 py-4"
+            className="mb-1.5 flex-row items-center gap-3.5 rounded-xl border border-border bg-surface px-4 py-3"
           >
             <View
               className="h-10 w-10 items-center justify-center rounded-xl"

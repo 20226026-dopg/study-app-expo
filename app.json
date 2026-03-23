@@ -21,7 +21,7 @@
       "package": "com.anonymous.videocallingmobileapp"
     },
     "web": {
-      "output": "static",
+      "output": "server",
       "favicon": "./assets/images/favicon.png",
       "bundler": "metro"
     },

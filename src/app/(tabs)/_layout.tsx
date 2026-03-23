@@ -1,8 +1,8 @@
-import React from "react";
-import { NativeTabs } from "expo-router/unstable-native-tabs";
-import { Redirect } from 'expo-router';
-import { useAuth } from '@clerk/expo'
 import { COLORS } from "@/lib/theme";
+import { useAuth } from "@clerk/expo";
+import { Redirect } from "expo-router";
+import { NativeTabs } from "expo-router/unstable-native-tabs";
+import React from "react";
 
 const TabsLayout = () => {
   const { isSignedIn, isLoaded } = useAuth();
@@ -16,13 +16,13 @@ const TabsLayout = () => {
   }
 
   return (
-    <NativeTabs>
+    <NativeTabs tintColor={COLORS.background}>
       <NativeTabs.Trigger name="index">
         <NativeTabs.Trigger.Label>Chats</NativeTabs.Trigger.Label>
         <NativeTabs.Trigger.Icon
           sf="house.fill"
           md="chat"
-          selectedColor="#6C5CE7"
+          selectedColor={COLORS.primary}
         />
       </NativeTabs.Trigger>
       <NativeTabs.Trigger name="explore">
@@ -30,7 +30,8 @@ const TabsLayout = () => {
         <NativeTabs.Trigger.Icon
           sf="magnifyingglass"
           md="explore"
-          selectedColor="#6C5CE7"
+          
+          selectedColor={COLORS.primary}
         />
       </NativeTabs.Trigger>
       <NativeTabs.Trigger name="profile">
@@ -38,7 +39,7 @@ const TabsLayout = () => {
         <NativeTabs.Trigger.Icon
           sf="person.fill"
           md="person"
-          selectedColor="#6C5CE7"
+          selectedColor={COLORS.primary}
         />
       </NativeTabs.Trigger>
     </NativeTabs>
